@@ -130,7 +130,11 @@
   for( var a = 0; a < apples.length; a++ )
   {
     ctx.fillStyle = apples[a].color;
-    ctx.fillRect(apples[a].x, apples[a].y, aw, ah);
+    //ctx.fillRect(apples[a].x, apples[a].y, aw, ah);
+    var circle = new Path2D();
+    circle.moveTo(apples[a].x, apples[a].y);
+    circle.arc(apples[a].x + 6, apples[a].y + 6, 6, 0, 2 * Math.PI);
+    ctx.fill(circle);
   }
 
   // check for snake head collisions with apples
